@@ -1,36 +1,36 @@
 const entityConfig = {
-  name: "Student",
-  collection: "student",
-  apiPrefix: "/school",
-  routePath: "/students",
+  name: "VideoGame",
+  collection: "videogame",
+  apiPrefix: "/store",
+  routePath: "/videogames",
   fields: {
     id: { type: "Number", unique: true, required: false },
-    name: { type: "String", required: true },
-    email: { type: "String", required: false },
-    course: { type: "String", required: false },
-    subject: { type: "String", required: false },
-    grade: { type: "Number", required: true },
-    passed: { type: "Boolean", required: false },
-    age: { type: "Number", required: false },
-    gender: { type: "String", required: false }
+    title: { type: "String", required: true },
+    genre: { type: "String", required: false },
+    platform: { type: "String", required: false },
+    developer: { type: "String", required: false },
+    price: { type: "Number", required: true },
+    rating: { type: "Number", required: true },
+    worthBuying: { type: "Boolean", required: false },
+    costBenefitRatio: { type: "Number", required: false }
   },
   validate(data) {
-    if (data.grade < 0 || data.grade > 10) {
-      throw new Error("Grade must be between 0 and 10");
+    if (data.price <= 0) {
+      throw new Error("Price must be greater than zero");
     }
-    if (data.age !== undefined && data.age < 0) {
-      throw new Error("Age must be greater than zero");
+    if (data.rating < 1 || data.rating > 100) {
+      throw new Error("Rating must be between 1 and 100");
     }
   },
   calculations: {
     onSave(data) {
-      data.passed = data.grade >= 7;
+      data.costBenefitRatio = Number((data.rating / data.price).toFixed(4));
+      data.worthBuying = data.rating >= 70 && data.price <= 60;
     },
     onList(items) {
-      const total = items.reduce((sum, item) => sum + item.grade, 0);
-      const average = items.length > 0 ? total / items.length : 0;
-      return items.map(item => {
-        item.courseAverage = Number(average.toFixed(2));
+      items.sort((a, b) => b.costBenefitRatio - a.costBenefitRatio);
+      return items.map((item, index) => {
+        item.rank = 100 - index;
         return item;
       });
     },
@@ -38,19 +38,19 @@ const entityConfig = {
       return item;
     }
   },
-  listCalculationPath: "/average",
+  listCalculationPath: "/ranking",
   seedDataPath: "./data/initialData.json",
   testMockData: {
-    name: "Jane Doe Test",
-    email: "jane.test@example.com",
-    course: "Grade 10",
-    subject: "Mathematics",
-    grade: 9.5,
-    age: 15,
-    gender: "Female"
+    title: "Test Game",
+    genre: "Action",
+    platform: "PC",
+    developer: "TestDev",
+    price: 50,
+    rating: 80
   },
   testUpdateMockData: {
-    grade: 6.5
+    price: 40,
+    rating: 90
   }
 };
 
