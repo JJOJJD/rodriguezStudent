@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "course": "Grade 10",
+    "subject": "Mathematics",
+    "grade": 8.5,
+    "passed": false,
+    "age": 16,
+    "gender": "Male"
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "course": "Grade 10",
+    "subject": "Mathematics",
+    "grade": 9.2,
+    "passed": false,
+    "age": 15,
+    "gender": "Female"
+  },
+  {
+    "id": 3,
+    "name": "Robert Johnson",
+    "email": "robert.j@example.com",
+    "course": "Grade 10",
+    "subject": "Mathematics",
+    "grade": 6.8,
+    "passed": false,
+    "age": 16,
+    "gender": "Male"
+  },
+  {
+    "id": 4,
+    "name": "Emily Davis",
+    "email": "emily.d@example.com",
+    "course": "Grade 10",
+    "subject": "Mathematics",
+    "grade": 7.5,
+    "passed": false,
+    "age": 15,
+    "gender": "Female"
+  },
+  {
+    "id": 5,
+    "name": "Michael Brown",
+    "email": "michael.b@example.com",
+    "course": "Grade 10",
+    "subject": "Mathematics",
+    "grade": 5.4,
+    "passed": false,
+    "age": 16,
+    "gender": "Male"
+  },
+  {
+    "id": 6,
+    "name": "Sarah Miller",
+    "email": "sarah.m@example.com",
+    "course": "Grade 10",
+    "subject": "Mathematics",
+    "grade": 8.0,
+    "passed": false,
+    "age": 15,
+    "gender": "Female"
+  },
+  {
+    "id": 7,
+    "name": "David Wilson",
+    "email": "david.w@example.com",
+    "course": "Grade 10",
+    "subject": "Mathematics",
+    "grade": 7.0,
+    "passed": false,
+    "age": 16,
+    "gender": "Male"
+  },
+  {
+    "id": 8,
+    "name": "Jessica Taylor",
+    "email": "jessica.t@example.com",
+    "course": "Grade 10",
+    "subject": "Mathematics",
+    "grade": 9.8,
+    "passed": false,
+    "age": 15,
+    "gender": "Female"
+  },
+  {
+    "id": 9,
+    "name": "James Anderson",
+    "email": "james.a@example.com",
+    "course": "Grade 10",
+    "subject": "Mathematics",
+    "grade": 4.5,
+    "passed": false,
+    "age": 16,
+    "gender": "Male"
+  },
+  {
+    "id": 10,
+    "name": "Amanda Thomas",
+    "email": "amanda.t@example.com",
+    "course": "Grade 10",
+    "subject": "Mathematics",
+    "grade": 8.3,
+    "passed": false,
+    "age": 15,
+    "gender": "Female"
+  }
+]
